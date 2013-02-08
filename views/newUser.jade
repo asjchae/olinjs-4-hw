@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(action='/users/new', method='post', id="login")
+    | Name:
+    input(name='name', id="username")
+
+    button('type='submit')
+      | Submit
