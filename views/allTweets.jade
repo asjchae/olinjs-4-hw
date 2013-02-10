@@ -1,0 +1,9 @@
+extends layout
+
+block content
+
+  h1 #{title}
+
+  div
+    each twit, i in allTweets
+      p #{twit.tweet}

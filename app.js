@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , tweets = require('./routes/tweets')
   , http = require('http')
   , path = require('path')
   , mongoose = require("mongoose");
@@ -31,10 +32,12 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
+app.get('/', tweets.main);
+app.post('/tweets/:user', tweets.refresh);
 app.get('/users', user.list);
 app.get('/users/new', user.new);
 app.post('/users/new', user.login);
+app.get('/tweets', tweets.all);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

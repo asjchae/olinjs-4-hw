@@ -15,11 +15,13 @@ exports.new = function(req, res) {
 };
 
 
-exports.login = function(req, res) { 
-    User.findOne({name: req.body.name}), function(err, response) {
+
+exports.login = function(req, res) {
+    User.findOne({name: req.body.name}).exec(function (err, response) {
         if (err) {
-            console.log("Problem logging in", err);
+            console.log("error");
         } else if (!response) {
+            console.log("create new user");
             var user = new User({name: req.body.name});
             user.save(function (err) {
                 if (err) {
@@ -29,9 +31,11 @@ exports.login = function(req, res) {
                 }
             })
         } else {
+            console.log("already a user");
             login(req, res, user);
-        } 
-    }
+        }
+
+    });
 }
 
 function login(req, res, user) {
