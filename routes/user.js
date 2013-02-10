@@ -39,6 +39,6 @@ exports.login = function(req, res) {
 }
 
 function login(req, res, user) {
-    req.session.user = user;
+    req.session.user = req.body.name;
     return res.redirect('/');
 }

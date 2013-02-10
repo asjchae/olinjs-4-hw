@@ -4,7 +4,7 @@ block content
   h1 #{title}
 
   div
-    form(action='/tweets/:user', method='post', id="tweet")
+    form(action='/tweets/:user', method='post', id="composetweet")
       | Compose a Twit
       input(name='tweeting', id="tweeting")
   
@@ -13,4 +13,9 @@ block content
 
   div
      each tweet, i in recent
-      p #{tweet.tweet}
+      | #{tweet.tweet}
+      br
+      | #{tweet.username}
+      br
+      | #{tweet.created}
+      br

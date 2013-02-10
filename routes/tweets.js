@@ -15,23 +15,16 @@ exports.main = function(req, res) {
 }
 
 exports.refresh = function(req, res) {
-	var tweet = new Tweet({tweet: req.body.tweet});
+	var tweet = new Tweet({tweet: req.body.tweeting, username: req.session.user, created: new Date()});
 	tweet.save(function (err) {
 		if (err) {
 			console.log("Problem saving tweet", err);
 		} else {
-			console.log("Tweet successful");
 			res.send("Tweet successful.");
 		}
 	});
 }
 
-exports.all = function(req, res) {
-	var allTweets = Tweet.find({}).exec(function (err, response) {
-		if (err) {
-			return console.log("error", err);
-		} else {
-			res.render('allTweets', {title: "All tweets", allTweets: response});
-		}
-	});
+exports.error = function(req, res) {
+	res.redirect('/');
 }
