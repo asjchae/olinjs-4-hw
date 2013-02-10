@@ -5,7 +5,13 @@ var Tweet = require('../models/tweetschema')
 		, mongoose = require('mongoose');
 
 exports.main = function(req, res) {
-	res.render('tweets', {title: "Crappy Twitter"});
+	var recentTweets = Tweet.find({}).exec(function (err, response) {
+		if (err) {
+			return console.log("error", err);
+		} else {
+			res.render('tweets', {title: "Crappy Twitter", recent: response})
+		}
+	});
 }
 
 exports.refresh = function(req, res) {

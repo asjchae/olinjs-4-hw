@@ -2,9 +2,15 @@ extends layout
 
 block content
   h1 #{title}
-  form(action='/tweets/:user', method='post', id="tweet")
-    | Compose a Twit
-    input(name='tweeting', id="tweeting")
 
-    button('type='submit')
-      | Send Twit
+  div
+    form(action='/tweets/:user', method='post', id="tweet")
+      | Compose a Twit
+      input(name='tweeting', id="tweeting")
+  
+      button('type='submit')
+        | Send Twit
+
+  div
+     each tweet, i in recent
+      p #{tweet.tweet}
