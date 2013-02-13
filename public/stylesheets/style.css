@@ -56,8 +56,6 @@ div.alltweets {
 
 div.onetweet {
 	display: block;
-	margin-right: 400px;
-	margin-left: 200px;
 	padding: 10px;
 	position: relative;
 	border-radius: 10px;
