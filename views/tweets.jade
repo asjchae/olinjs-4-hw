@@ -1,21 +1,16 @@
 extends layout
 
 block content
-  h1 #{title}
+  h1(class="title") #{title}
+  - if (signedin)
+    div(class="composeform")
+      form(action='/tweets/:user', method='post', id="tweet")
+        h3(class="composesign") Compose a Twit
+        input(name='tweeting', id="tweeting", class="tweeting")
+    
+        div(class="submitbutton")
+          button('type='submit')
+            | Send Twit
 
-  div
-    form(action='/tweets/:user', method='post', id="tweet")
-      | Compose a Twit
-      input(name='tweeting', id="tweeting")
-  
-      button('type='submit')
-        | Send Twit
-
-  div
-     each tweet, i in recent
-      | #{tweet.tweet}
-      br
-      | #{tweet.username}
-      br
-      | #{tweet.created}
-      br
+  div(id="tweetrefresher", class="alltweets")
+    include _tweets

@@ -18,7 +18,7 @@ exports.main = function(req, res) {
 		} else {
 			var twits = response.sortByProp('datetime');
 			response = twits.reverse();
-			res.render('tweets', {title: "Crappy Twitter", recent: response})
+			res.render('tweets', {title: "Crappy Twitter", recent: response, signedin: req.session.user})
 		}
 	});
 }

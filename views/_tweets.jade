@@ -1,0 +1,8 @@
+div(class='tweets')
+  h2(class='looktwits') Look at all these twits!
+  each tweet, i in recent
+    div(class='onetweet')
+      h3 #{tweet.username}
+      br
+      | #{tweet.tweet}
+      br
