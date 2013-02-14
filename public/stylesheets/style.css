@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #5D99D5;
 }
 
 a {
@@ -11,7 +12,6 @@ h1.title {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
-	color: blue;
 }
 
 h2.looktwits {
@@ -23,11 +23,14 @@ h2.looktwits {
 }
 
 div.composeform {
+	background-color: #94999E;
+	margin: 10px;
 	border: solid black 4px;
 	display: inline-block;
 	vertical-align: text-top;
 	padding: 10px;
 	border-radius: 10px;
+	margin-left: 130px;
 }
 
 h3.composesign {
@@ -37,21 +40,27 @@ h3.composesign {
 }
 
 input.tweeting {
+	margin-left: 10px;
 	display: inline-block;
 	overflow:scroll;
 	width: 60%;
 }
 
 div.submitbutton{
+	margin-right: 30px;
+	display: block;
 	text-align: right;
 }
 
 div.alltweets {
+	background-color: #94999E;
 	display: inline-block;
 	border: solid black 4px;
 	padding: 10px;
 	border-radius: 10px;
 	vertical-align: text-top;
+	margin-left: 10px;
+	width: 550px;
 }
 
 div.onetweet {
