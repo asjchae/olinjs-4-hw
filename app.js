@@ -12,7 +12,7 @@ var express = require('express')
   , mongoose = require("mongoose");
 
 var app = express();
-mongoose.connect(process.env.MONGOLAB_URI || 'localhost');
+mongoose.connect(process.env.MONGOLAB_URI || 'localhost/crappytwitter');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 4000);
